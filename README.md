@@ -1,0 +1,1 @@
+Projetos para testes de Configmap e secret

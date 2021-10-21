@@ -1,0 +1,22 @@
+
+appName: ms-autorizador
+replicaCount: 2
+labelType: backend
+
+rabbit:
+  host: jackal.rmq.cloudamqp.com
+  timeout: 30000
+  queue: compras-queue
+
+container:
+  repo: jonathasgarcia
+  name: ms-autorizador
+  port: 8090
+  nodePort: 30081
+  type: NodePort
+
+host:
+  path: /app
+
+
+
