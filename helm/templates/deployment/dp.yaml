@@ -39,6 +39,21 @@ spec:
                 configMapKeyRef:
                   name: {{ .Values.appName }}-configmap
                   key: RABBIT_QUEUE_NAME
+            - name: MONGO_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.appName }}-configmap
+                  key: MONGO_HOST
+            - name: MONGO_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.appName }}-configmap
+                  key: MONGO_PORT
+            - name: DATABASE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.appName }}-configmap
+                  key: DATABASE_NAME
   selector:
     matchLabels:
       type: {{ .Values.labelType }}

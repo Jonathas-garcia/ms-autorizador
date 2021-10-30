@@ -4,19 +4,24 @@ replicaCount: 2
 labelType: backend
 
 rabbit:
-  host: jackal.rmq.cloudamqp.com
+  host: rabbitmq.backend.svc
   timeout: 30000
   queue: compras-queue
+
+mongo:
+  host: mongo.backend.svc
+  port: 27017
+  database: compras
 
 container:
   repo: jonathasgarcia
   name: ms-autorizador
   port: 8090
-  nodePort: 30081
+  nodePort: 30082
   type: NodePort
 
 host:
-  path: /app
+  path: /ms-autorizador
 
 
 

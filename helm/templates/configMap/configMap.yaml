@@ -5,5 +5,7 @@ metadata:
 data:
   RABBIT_HOST: "{{ .Values.rabbit.host }}"
   RABBIT_TIMEOUT: "{{ .Values.rabbit.timeout }}"
-  RABBIT_EXCHANGE_NAME: "{{ .Values.rabbit.exchange }}"
   RABBIT_QUEUE_NAME: "{{ .Values.rabbit.queue }}"
+  MONGO_HOST: "{{ .Values.mongo.host }}"
+  MONGO_PORT: "{{ .Values.mongo.port }}"
+  DATABASE_NAME: "{{ .Values.mongo.database }}"

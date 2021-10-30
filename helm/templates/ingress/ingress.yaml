@@ -6,17 +6,16 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$2
   labels:
-      name: {{ .Values.appName }}-ingress
+    name: {{ .Values.appName }}-ingress
 spec:
   rules:
-   - http:
-      paths:
-      - pathType: Prefix
-        path: {{ .Values.host.path }}(/|$)(.*)
-        backend:
-          service:
-            name: {{ .Values.appName }}-svc
-            port:
-              number: 8080
-      
-
+    - host: "app.devlocal.com"
+      http:
+        paths:
+          - pathType: Prefix
+            path: {{ .Values.host.path }}(/|$)(.*)
+            backend:
+              service:
+                name: {{ .Values.appName }}-svc
+                port:
+                  number: 8090
